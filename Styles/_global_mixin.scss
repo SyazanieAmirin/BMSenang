@@ -1,0 +1,9 @@
+@import "global_var";
+
+/* Texts */
+@mixin heading1Text {
+    color: $secondaryColour;
+    font-family: $mainFont;
+    font-size: $h1Size;
+    font-weight: bold;
+}

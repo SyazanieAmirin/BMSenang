@@ -1,0 +1,5 @@
+@import "global_mixin";
+
+h1 {
+    @include heading1Text;
+}
