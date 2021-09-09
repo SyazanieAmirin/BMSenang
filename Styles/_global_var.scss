@@ -3,9 +3,26 @@ $primaryColour: white; // Everything
 $secondaryColour: black; // Use for buttons when being selected/hovered, text colour
 $tertiaryColour: #005FED; // Use for links, misc
 
-/* Fonts */
+/* Fonts & Texts */
 $mainFont: Arial, Helvetica, sans-serif;
-$pSize: 1.75em; // Paragraph
-$linksSize: 1.75em; // Links
-$h1Size: 2.25em; // Heading 1
 $titleSize: 3.125em; // Title
+$h1Size: 2.25em; // Heading 1
+$h2Size: 1.75em; // Heading 2
+$h3Size: 1.75em; // Heading 3
+$h4Size: 1.5em; // Heading 4
+$h5Size: 1.25em; // Heading 5
+$h6Size: 1em; // Heading 6
+$pSize: 1em; // Paragraph
+$listsSize: 1em; // Lists Size
+$linksSize: 1em; // Links
+
+/* Fonts & Texts - Mobile */
+$titleSizeM: 25em; // Title
+$h1SizeM: 1.75em; // Heading 1
+$h2SizeM: 1.5em; // Heading 2
+$h3SizeM: 1.3em; // Heading 3
+$h4SizeM: 1.2em; // Heading 4
+$h5SizeM: 1.1em; // Heading 5
+
+// Animations
+$transiDur: 0.3s; // General transition duration

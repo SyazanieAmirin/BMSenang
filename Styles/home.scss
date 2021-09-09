@@ -1,0 +1,160 @@
+@import "global_style";
+
+// Container
+.container {
+    display: grid;
+    grid-template-columns: 0.6fr 2fr;
+    column-gap: 5%;
+}
+
+// Sidebar
+.main-sidebar {
+    @media (min-width: 999px) {
+        display: grid;
+        grid-template-rows: 0.5fr 1fr; // For content inside sidebar
+
+        position: relative; // To enable the right and bottom
+        right: 0.4em; // Make it stick to left-side screen
+        bottom: 0.4em; // Make it stick to top screen
+        // overflow-y: auto; // Enable scrollbar inside sidebar
+        
+        height: 100vh; // Make height fill the whole screen
+        justify-items: center; // Horizontal align
+        text-align: center;
+        
+        // Effects
+        background: $primaryColour;
+        box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.25); // Shadow
+
+        // To make the sidebar in fixed position
+        div {
+            position: fixed;
+            top: 0;
+        }
+
+        // Site's main title
+        #sidebar-site-title {
+            position: relative;
+            top: 0.14em;
+            transition: 0.2s;
+        }
+
+        #sidebar-site-title:hover {
+            font-size: 2.30em;
+        }
+
+        // Remove text deco
+        #sidebar-site-title {
+            a {
+                text-decoration: none;
+            }
+        }
+
+        // The subtitle below title
+        #sidebar-site-subtitle { 
+            font-style: italic;
+            font-size: $h6Size;
+            font-weight: 300;
+
+            position: relative;
+            bottom: 0.95em;
+        }
+
+        // All items in sidebar
+        div {
+            align-items: center;
+            .sidebar-item {
+                // Positioning and displays
+                display: flex;
+                flex-wrap: wrap;
+                flex-direction: row;
+
+                position: relative;
+                top: 0.5em;
+                justify-content: center;
+                padding: 1em;
+                margin-bottom: 2.5em;
+
+                // Styles - Background
+                border-radius: 3em;
+
+                // Styles - Texts
+                text-decoration: none;
+                transition: $transiDur;
+            }
+
+            // Current selected page
+            #sidebar-home-item {
+                color: $primaryColour;
+                background-color: $secondaryColour;
+            }
+
+            // When the items were hovered
+            .sidebar-item:hover {
+                color: $primaryColour;
+                background-color: $secondaryColour;
+            }
+        }
+    
+        // Icons beside text on all items
+        .sidebar-item > .fas {
+            position: relative;
+            right: 0.5em;
+        }
+    }
+
+    @media (max-width: 999px) {
+        // Remove text deco of sidebar's title
+        #sidebar-site-title {
+            a {
+                text-decoration: none;
+            }
+        }
+
+        // The subtitle below title
+        #sidebar-site-subtitle { 
+            font-style: italic;
+            font-size: $h6Size;
+            font-weight: 300;
+        }
+    }
+}
+
+// Cards - Main Area
+.container {
+    .main-area {
+        // Main title [Home]
+        #main-page-title {
+            position: relative;
+            right: 0.3em;
+        }
+        // All the cards [Items]
+        .cards {
+            // Grid
+            display: grid;
+            align-items: center;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            row-gap: 1.5em; // Gap if screen too small
+            margin-top: 6%; // Spacing from title
+            .card-content {
+            // Effects
+                background: white;
+                box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.25);
+                border-radius: 10px;
+                padding: 20% 5% 0% 5%; // Inside card
+                margin: 0% 5% 0% 5%;
+                transition: $transiDur;
+            }
+
+            .card-content:hover {
+                box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.50);
+            }
+        }
+
+        #main-page-intro {
+            @media (min-width: 240px) and (max-width: 999px) {
+                font-size: $h2SizeM;
+              }
+        }
+    }
+}

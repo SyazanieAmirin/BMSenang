@@ -1,9 +1,74 @@
 @import "global_var";
 
-/* Texts */
-@mixin heading1Text {
+@mixin headings {
     color: $secondaryColour;
     font-family: $mainFont;
-    font-size: $h1Size;
     font-weight: bold;
+}
+
+@mixin paragraph {
+    color: $secondaryColour;
+    font-family: $mainFont;
+    font-weight: normal;
+}
+
+@mixin lists {
+    color: $secondaryColour;
+    font-family: $mainFont;
+    font-weight: bold;
+}
+
+@mixin link {
+    color: $secondaryColour;
+    background-color: none;
+    font-family: $mainFont;
+    font-weight: bold;
+}
+
+/* Texts */
+@mixin heading1Text {
+    @include headings;
+    font-size: $h1Size;
+}
+
+@mixin heading2Text{
+    @include headings;
+    font-size: $h2Size;
+}
+
+@mixin heading3Text{
+    @include headings;
+    font-size: $h3Size;
+}
+
+@mixin heading4Text{
+    @include headings;
+    font-size: $h4Size;
+}
+
+@mixin heading5Text{
+    @include headings;
+    font-size: $h5Size;
+}
+
+@mixin heading6Text{
+    @include headings;
+    font-size: $h6Size;
+}
+
+@mixin paraText{
+    @include paragraph;
+    font-size: $pSize;
+}
+
+// Lists
+@mixin listsText{
+    @include lists;
+    font-size: $listsSize;
+}
+
+// Links
+@mixin linkText{
+    @include link;
+    font-size: $linksSize;
 }

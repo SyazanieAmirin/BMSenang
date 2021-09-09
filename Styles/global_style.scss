@@ -3,3 +3,35 @@
 h1 {
     @include heading1Text;
 }
+
+h2 {
+    @include heading2Text;
+}
+
+h3 {
+    @include heading3Text;
+}
+
+h4 {
+    @include heading4Text;
+}
+
+h5 {
+    @include heading5Text;
+}
+
+h6 {
+    @include heading6Text;
+}
+
+ul {
+    @include listsText;
+}
+
+p {
+    @include paraText;
+}
+
+a {
+    @include linkText;
+}

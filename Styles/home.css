@@ -1,0 +1,207 @@
+/* Pimary colours */
+/* Fonts & Texts */
+/* Fonts & Texts - Mobile */
+/* Texts */
+h1 {
+  color: black;
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: bold;
+  font-size: 2.25em;
+}
+
+h2 {
+  color: black;
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: bold;
+  font-size: 1.75em;
+}
+
+h3 {
+  color: black;
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: bold;
+  font-size: 1.75em;
+}
+
+h4 {
+  color: black;
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: bold;
+  font-size: 1.5em;
+}
+
+h5 {
+  color: black;
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: bold;
+  font-size: 1.25em;
+}
+
+h6 {
+  color: black;
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: bold;
+  font-size: 1em;
+}
+
+ul {
+  color: black;
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: bold;
+  font-size: 1em;
+}
+
+p {
+  color: black;
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: normal;
+  font-size: 1em;
+}
+
+a {
+  color: black;
+  background-color: none;
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: bold;
+  font-size: 1em;
+}
+
+.container {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 0.6fr 2fr;
+      grid-template-columns: 0.6fr 2fr;
+  -webkit-column-gap: 5%;
+          column-gap: 5%;
+}
+
+@media (min-width: 999px) {
+  .main-sidebar {
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-rows: 0.5fr 1fr;
+        grid-template-rows: 0.5fr 1fr;
+    position: relative;
+    right: 0.4em;
+    bottom: 0.4em;
+    height: 100vh;
+    justify-items: center;
+    text-align: center;
+    background: white;
+    -webkit-box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.25);
+            box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.25);
+  }
+  .main-sidebar div {
+    position: fixed;
+    top: 0;
+  }
+  .main-sidebar #sidebar-site-title {
+    position: relative;
+    top: 0.14em;
+    -webkit-transition: 0.2s;
+    transition: 0.2s;
+  }
+  .main-sidebar #sidebar-site-title:hover {
+    font-size: 2.30em;
+  }
+  .main-sidebar #sidebar-site-title a {
+    text-decoration: none;
+  }
+  .main-sidebar #sidebar-site-subtitle {
+    font-style: italic;
+    font-size: 1em;
+    font-weight: 300;
+    position: relative;
+    bottom: 0.95em;
+  }
+  .main-sidebar div {
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  .main-sidebar div .sidebar-item {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    position: relative;
+    top: 0.5em;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    padding: 1em;
+    margin-bottom: 2.5em;
+    border-radius: 3em;
+    text-decoration: none;
+    -webkit-transition: 0.3s;
+    transition: 0.3s;
+  }
+  .main-sidebar div #sidebar-home-item {
+    color: white;
+    background-color: black;
+  }
+  .main-sidebar div .sidebar-item:hover {
+    color: white;
+    background-color: black;
+  }
+  .main-sidebar .sidebar-item > .fas {
+    position: relative;
+    right: 0.5em;
+  }
+}
+
+@media (max-width: 999px) {
+  .main-sidebar #sidebar-site-title a {
+    text-decoration: none;
+  }
+  .main-sidebar #sidebar-site-subtitle {
+    font-style: italic;
+    font-size: 1em;
+    font-weight: 300;
+  }
+}
+
+.container .main-area #main-page-title {
+  position: relative;
+  right: 0.3em;
+}
+
+.container .main-area .cards {
+  display: -ms-grid;
+  display: grid;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-grid-columns: (minmax(240px, 1fr))[auto-fit];
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  row-gap: 1.5em;
+  margin-top: 6%;
+}
+
+.container .main-area .cards .card-content {
+  background: white;
+  -webkit-box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.25);
+          box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.25);
+  border-radius: 10px;
+  padding: 20% 5% 0% 5%;
+  margin: 0% 5% 0% 5%;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+}
+
+.container .main-area .cards .card-content:hover {
+  -webkit-box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.5);
+          box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.5);
+}
+
+@media (min-width: 240px) and (max-width: 999px) {
+  .container .main-area #main-page-intro {
+    font-size: 1.5em;
+  }
+}
+/*# sourceMappingURL=home.css.map */
