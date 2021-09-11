@@ -8,6 +8,10 @@
         <!-- CSS -->
         <link rel="stylesheet" href="Styles/global_style.css">
         <link rel="stylesheet" href="Styles/home.css">
+
+        <!-- JS -->
+        <script src="JavaScript/home.js"></script>
+
         <!-- Misc -->
         <script src="https://kit.fontawesome.com/5820f5dc5d.js" crossorigin="anonymous"></script> <!-- Icon -->
 
@@ -18,14 +22,23 @@
             <!-- Sidebar start-->
             <div class="main-sidebar">
                 <div class="sidebar-title">
-                    <h1 id="sidebar-site-title"><a href="index.html">BM Senang</a></h1>
-                    <h3 id="sidebar-site-subtitle">Learn Malay Language Easily</h3>
+                    <div class="site-title-container">
+                        <h1 id="sidebar-site-title"><a href="index.html">BM Senang</a></h1>
+                        <h3 id="sidebar-site-subtitle">Learn Malay Language Easily</h3>
+                    </div>
+
+                    <div class="mobile-menu-container">
+                        <button onclick="toggleMobileMenu()" id="mobile-menu"><i class="fas fa-bars fa-lg"></i></button>
+                    </div>
+                    <!-- Button because accessibility -->
                     
-                    <h6 href="#" class="sidebar-item" id="sidebar-home-item"><i class="fas fa-home"></i></i>Home</h6>
-                    <a href="#" class="sidebar-item" id="sidebar-getting-started-item"><i class="fas fa-graduation-cap"></i>Lessons</a>
-                    <a href="#" class="sidebar-item" id="sidebar-books-item"><i class="fas fa-book-reader"></i>Books</a>
-                    <a href="#" class="sidebar-item" id="sidebar-books-item"><i class="fas fa-book"></i>Dictionary</a>
-                    <a href="#" class="sidebar-item" id="sidebar-contact-item"><i class="fas fa-phone-square-alt"></i>Contact</a>
+                    <div class="sidebar-items-container" id="sidebar-items-container">
+                        <h6 href="#" class="sidebar-item" id="sidebar-home-item"><i class="fas fa-home"></i></i>Home</h6>
+                        <a href="#" class="sidebar-item" id="sidebar-getting-started-item"><i class="fas fa-graduation-cap"></i>Lessons</a>
+                        <a href="#" class="sidebar-item" id="sidebar-books-item"><i class="fas fa-book-reader"></i>Books</a>
+                        <a href="#" class="sidebar-item" id="sidebar-books-item"><i class="fas fa-book"></i>Dictionary</a>
+                        <a href="#" class="sidebar-item" id="sidebar-contact-item"><i class="fas fa-phone-square-alt"></i>Contact</a>
+                    </div>
                 </div>
             </div>
             <!-- Sidebar ends-->
@@ -47,7 +60,7 @@
                     </div>
                     <!-- Main area ends -->
                 </div>
-                <h2 id="main-page-intro" style = "text-align: center; padding-top: 1.5em;">This is a website that can help you getting started on learning Bahasa Melayu (Malay Language)! It's free forever!
+                <h2 id="main-page-intro" style = "text-align: center; padding: 2em 1em 0 0;">This is a website that can help you getting started on learning Bahasa Melayu (Malay Language)! It's free forever!
                 <br><br>Do note that this website is still in progress so some features are still not working properly/exist!</h2> <!-- Just for temporary -->
             </div>
             <!-- Main area ends -->

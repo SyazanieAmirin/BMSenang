@@ -1,46 +1,61 @@
 @import "global_style";
 
-// Container
+// Container - This is for grid display only
 .container {
-    display: grid;
-    grid-template-columns: 0.6fr 2fr;
-    column-gap: 5%;
+    // Desktop
+    @media (min-width: 999px) {
+        display: grid;
+        grid-template-columns: 0.6fr 2fr;
+        column-gap: 5%;
+    }
+
+    // Mobile
+    @media (max-width: 998px) {
+        display: grid;
+        grid-template-columns: 1fr;
+        column-gap: 5%;
+    }
 }
 
 // Sidebar
 .main-sidebar {
+    
+    // Laptop/Desktop
     @media (min-width: 999px) {
-        display: grid;
-        grid-template-rows: 0.5fr 1fr; // For content inside sidebar
+        .sidebar-title {
+            // Display
+            display: grid;
+            grid-template-rows: 0.2fr 1fr; // For content inside sidebar
 
-        position: relative; // To enable the right and bottom
-        right: 0.4em; // Make it stick to left-side screen
-        bottom: 0.4em; // Make it stick to top screen
-        // overflow-y: auto; // Enable scrollbar inside sidebar
-        
-        height: 100vh; // Make height fill the whole screen
-        justify-items: center; // Horizontal align
-        text-align: center;
-        
-        // Effects
-        background: $primaryColour;
-        box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.25); // Shadow
-
-        // To make the sidebar in fixed position
-        div {
-            position: fixed;
-            top: 0;
+            // Positioning
+            position: fixed; // To enable the right and bottom
+            left: 0; // Make it stick to left-side screen
+            top: 0; // Make it stick to top screen
+            width: 20%;
+            height: 100vh;
+            // overflow-y: auto; // Enable scrollbar inside sidebar
+            
+            justify-items: center; // Horizontal align
+            text-align: center;
+            
+            // Effects
+            background: $primaryColour;
+            box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.25); // Shadow
         }
 
-        // Site's main title
-        #sidebar-site-title {
-            position: relative;
-            top: 0.14em;
-            transition: 0.2s;
-        }
+        .sidebar-title {
+            .site-title-container {
+                // Site's main title
+                #sidebar-site-title {
+                    position: relative;
+                    top: 0.14em;
+                    transition: 0.2s;
+                }
 
-        #sidebar-site-title:hover {
-            font-size: 2.30em;
+                #sidebar-site-title:hover {
+                    font-size: 2.30em;
+                }
+            }
         }
 
         // Remove text deco
@@ -61,7 +76,7 @@
         }
 
         // All items in sidebar
-        div {
+        .sidebar-items-container {
             align-items: center;
             .sidebar-item {
                 // Positioning and displays
@@ -69,10 +84,8 @@
                 flex-wrap: wrap;
                 flex-direction: row;
 
-                position: relative;
-                top: 0.5em;
                 justify-content: center;
-                padding: 1em;
+                padding: 1em 3em 1em 3em;
                 margin-bottom: 2.5em;
 
                 // Styles - Background
@@ -101,21 +114,91 @@
             position: relative;
             right: 0.5em;
         }
+
+        // Hide the mobile menu on desktop
+        .mobile-menu-container {
+            display: none;
+        }
     }
 
-    @media (max-width: 999px) {
-        // Remove text deco of sidebar's title
+    // Mobile
+    @media (max-width: 998px) {
+
+        .sidebar-title { // Reminder, this is the parent... Not .main-sidebar...
+
+        // Navbar - Constant size
+        // Positioning
+        position: fixed;
+        width: 100%;
+        left: 0;
+        top: 0;
+        z-index: 99;
+        
+        // Styles
+        background: $primaryColour;
+        box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.25); // Shadow
+
+        // Display
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        }
+
+        // Navbar title
         #sidebar-site-title {
+                
             a {
+                // Styles
                 text-decoration: none;
-            }
+                color: $secondaryColour;
+                font-size: 0.7em;
+
+                // Positioning
+                z-index: 999; // Make it go above
+                position: relative;
+                bottom: 0.1em;
+                left: 0.7em;
+            }   
+        }
+
+        // Mobile menu - Hamburger
+        #mobile-menu {
+            // Type of display
+            
+            // Styles
+            background-color: rgba(165, 165, 165, 0.25);
+            border: none;
+            padding: 1em;
+            position: relative;
+            right: 2em;
         }
 
         // The subtitle below title
         #sidebar-site-subtitle { 
-            font-style: italic;
-            font-size: $h6Size;
-            font-weight: 300;
+            display: none;
+        }
+
+        // All items in sidebar
+        div {
+            .sidebar-item {
+
+                // Styles - Background
+                border-radius: 3em;
+
+                // Styles - Texts
+                text-decoration: none;
+            }
+        }
+
+        // Hide it initially
+        .sidebar-items-container {
+            display: none;
+        }
+
+        // Icons beside text on all items
+        .sidebar-item > .fas {
+            position: relative;
+            right: 0.5em;
         }
     }
 }
@@ -123,10 +206,12 @@
 // Cards - Main Area
 .container {
     .main-area {
+
         // Main title [Home]
         #main-page-title {
+            display: flex;
             position: relative;
-            right: 0.3em;
+            right: 0.3em; // Move it a bit to left
         }
         // All the cards [Items]
         .cards {
@@ -135,26 +220,43 @@
             align-items: center;
             grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
             row-gap: 1.5em; // Gap if screen too small
-            margin-top: 6%; // Spacing from title
+            margin-top: 5%; // Spacing from title
             .card-content {
             // Effects
                 background: white;
                 box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.25);
                 border-radius: 10px;
                 padding: 20% 5% 0% 5%; // Inside card
-                margin: 0% 5% 0% 5%;
+                margin: 0% 15% 0% 15%;
                 transition: $transiDur;
             }
 
             .card-content:hover {
                 box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.50);
             }
+
+            #main-page-intro {
+                text-align: center
+            }
         }
 
-        #main-page-intro {
-            @media (min-width: 240px) and (max-width: 999px) {
+        // For mobile
+        @media (min-width: 240px) and (max-width: 999px) {
+
+            // This is because to make it below navbar (Navbar out of flow)
+            margin-top: 5em;
+
+            // Make the introduction text to be smaller
+            #main-page-intro {
                 font-size: $h2SizeM;
-              }
+            }
+            
+            // Make the main title's position to be on its original location
+            #main-page-title {
+                position: relative;
+                right: 0.0em;
+            }
         }
+        
     }
 }
