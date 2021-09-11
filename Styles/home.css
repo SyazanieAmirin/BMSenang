@@ -254,10 +254,6 @@ a {
           box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.5);
 }
 
-.container .main-area .cards #main-page-intro {
-  text-align: center;
-}
-
 @media (min-width: 240px) and (max-width: 999px) {
   .container .main-area {
     margin-top: 5em;
