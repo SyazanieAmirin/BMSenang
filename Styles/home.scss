@@ -108,6 +108,11 @@
                 background-color: $secondaryColour;
             }
         }
+
+        // Hide mobile navbar
+        .mobile-items-container-navbar {
+            display: none;
+        }
     
         // Icons beside text on all items
         .sidebar-item > .fas {
@@ -124,29 +129,27 @@
     // Mobile
     @media (max-width: 998px) {
 
-        .sidebar-title { // Reminder, this is the parent... Not .main-sidebar...
+        .sidebar-title { // Reminder, this is the parent... Not .main-sidebar because this is inside main-sidebar already...
+            // Positioning
+            position: fixed;
+            width: 100%;
+            height: 9%; // Sidebar's height
+            left: 0;
+            top: 0;
+            z-index: 99;
+            
+            // Styles
+            background: $primaryColour;
+            box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.15); // Shadow
 
-        // Navbar - Constant size
-        // Positioning
-        position: fixed;
-        width: 100%;
-        left: 0;
-        top: 0;
-        z-index: 99;
-        
-        // Styles
-        background: $primaryColour;
-        box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.25); // Shadow
-
-        // Display
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
+            // Display
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
         }
 
         // Navbar title
-        #sidebar-site-title {
-                
+        #sidebar-site-title {    
             a {
                 // Styles
                 text-decoration: none;
@@ -161,14 +164,12 @@
             }   
         }
 
-        // Mobile menu - Hamburger
+        // Mobile menu - The hamburger button in header
         #mobile-menu {
-            // Type of display
-            
             // Styles
             background-color: rgba(165, 165, 165, 0.25);
             border: none;
-            padding: 1em;
+            padding: 0.7em;
             position: relative;
             right: 2em;
         }
@@ -178,35 +179,65 @@
             display: none;
         }
 
-        // All items in sidebar
-        div {
-            .sidebar-item {
+        // Mobile menu - The everything
+        .mobile-items-container-navbar {       
+            // Positioning and displays
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            position: fixed;
+            margin-top: 4em;
+            height: 100vh;
+            width: 100%;
+            // Styles
+            background-color: white;
+            z-index: 999;
 
+            .sidebar-item-nav {
+                justify-content: center;
+                padding: 1.3em 5em 1.3em 5em;
+                margin-bottom: 1.5em;
                 // Styles - Background
                 border-radius: 3em;
-
                 // Styles - Texts
                 text-decoration: none;
+                transition: $transiDur;
             }
-        }
 
-        // Hide it initially
-        .sidebar-items-container {
-            display: none;
-        }
+            // Current selected page
+         #sidebar-home-item-nav {
+            color: $primaryColour;
+            background-color: $secondaryColour;
+         }
 
-        // Icons beside text on all items
-        .sidebar-item > .fas {
-            position: relative;
-            right: 0.5em;
-        }
+        // When the items were hovered
+        .sidebar-item-nav:hover {
+            color: $primaryColour;
+            background-color: $secondaryColour;
+             }
+         }
+     }
+
+    // Hide it initially
+     .sidebar-items-container {
+        display: none; 
+    }
+
+    // Show the mobile menu
+    .mobile-items-container-navbar {
+         display: none;
+    }
+
+    // Icons beside text on all items
+    .sidebar-item-nav > .fas {
+        position: relative;
+        right: 0.5em;
     }
 }
 
 // Cards - Main Area
 .container {
     .main-area {
-
         // Main title [Home]
         #main-page-title {
             display: flex;
@@ -221,13 +252,14 @@
             grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
             row-gap: 1.5em; // Gap if screen too small
             margin-top: 5%; // Spacing from title
+            margin-right: 4%;
             .card-content {
             // Effects
                 background: white;
                 box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.25);
                 border-radius: 10px;
-                padding: 20% 5% 0% 5%; // Inside card
-                margin: 0% 15% 0% 15%;
+                padding: 15% 5% 0% 5%; // Inside card
+                margin: 0% 5% 0% 5%;
                 transition: $transiDur;
             }
 
@@ -238,7 +270,6 @@
 
         // For mobile
         @media (min-width: 240px) and (max-width: 999px) {
-
             // This is because to make it below navbar (Navbar out of flow)
             margin-top: 5em;
 
